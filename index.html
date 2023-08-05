@@ -10,7 +10,7 @@
 <meta content='Coder Arjun Sapkota' property='og:title'/>
 <meta content='Offical Protfolio website of Arjun Sapkota. Website and App Developer in Nepal lives in Birtamode jhapa Nepal. Arjun Sapkota is known as the Nepali programmer or Nepali coder....Software Developer of nepal... Neplai programmer' property='og:description'/> 
  <script src="https://kit.fontawesome.com/cfe10d992d.js" crossorigin="anonymous"></script>
-
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Coder Bashudev Sapkota</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -51,6 +51,20 @@ button{
   border-radius: 100px;
   margin-top: 10px;
 }
+
+/* Message css */
+      .swal2-popup {
+    font-size: 1.6rem;
+}
+.swal2-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+.swal2-content {
+    font-size: 1.8rem;
+}
+
+     
   </style>
   
 
@@ -733,7 +747,8 @@ button{
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-             <form action="forms/contact.php" method="post" role="form" class="form">
+             <form action="forms/contact.php" method="post" role="form" class="form" d="contact-form">
+              
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -749,7 +764,7 @@ button{
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
              
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"> <button type="submit" id="submit-button">Send Message</button></div>
             </form>
 
           </div>
@@ -796,6 +811,25 @@ button{
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+   <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Show SweetAlert prompt
+            Swal.fire({
+                icon: 'success',
+                title: 'Message Sent!',
+                text: 'Your message has been successfully sent.',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            // Submit the form after a delay
+            setTimeout(function() {
+                event.target.submit();
+            }, 3100);
+        });
+    </script>
 
 </body>
 
