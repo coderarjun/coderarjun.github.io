@@ -32,6 +32,27 @@
 
   <!--- Main CSS File --->
   <link href="assets/css/style.css" rel="stylesheet">
+   <style>
+  input[type=text],input[type=email]  {
+  width: 100%;
+  padding: 15px 25px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button{
+  background-color: rgb(29, 102, 211);
+  color: white;
+  font-size: 20px;
+  padding: 10px 30px 10px 30px;
+  border: none;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+  </style>
+  
 
 </head>
 
@@ -712,10 +733,10 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="https://frontbin.000webhostapp.com/email/contact_process.php" method="POST" class="php-email-form">
+             <form action="forms/contact.php" method="post" role="form" class="form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
@@ -727,11 +748,7 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
+             
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
 
