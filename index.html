@@ -63,6 +63,80 @@ button{
 .swal2-content {
     font-size: 1.8rem;
 }
+       /* Style for the eca */
+                .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            backdrop-filter: blur(8px); /* Apply background blur */
+        }
+
+        /* Style for the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 40px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            text-align: center;
+            max-width: 80%;
+            font-family: "Arial", sans-serif; /* Attractive font */
+            border-radius: 10px;
+        }
+
+        /* Style for the close button */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #ff5733; /* Attractive color for the close button */
+            border-radius: 50%; /* Rounded shape */
+            background-color: #007bff; /* Blue background color */
+            color: white;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style for the message and iconn */
+        .message {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .iconn {
+            font-size: 70px;
+            color: #333;
+        }
+
+        /* Style for the attractive button */
+        .attractive-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue background color */
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px; /* Rounded corners */
+            cursor: pointer;
+        }
+
 
      
   </style>
@@ -297,18 +371,31 @@ button{
           <h2>Extracurricular</h2>
         
        
+         <!-- for eca copy from here -->
           <div>
-            <a href="#contact"><button class="hire">View my extracurricular</button></a>
-           
+            <button id="popupButton" class="attractive-button">View my extracurricular</button>
            </div>
+
+           <!-- Overlay background -->
+           <div class="overlay" id="overlay"></div>
+
+    <!-- Popup content -->
+    <div id="popup" class="popup">
+        <button class="close-button" id="closeButton">X</button>
+        <div class="message">
+            <span class="iconn">🚧</span> I am currently working on adding an ECA section to my portfolio. It will be completed soon.
+        </div>
+    </div>
+
+
       
           
 
         </div>
 
       </div>
-    </section>
-    
+    </section> 
+    <!-- to here -->    
     <!-- Extracirruculars Section -->
 
 
@@ -798,6 +885,32 @@ button{
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- JS Files -->
+
+
+   <script>
+    // Get references to the button, overlay, popup, and close button
+    const popupButton = document.getElementById('popupButton');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+    const closeButton = document.getElementById('closeButton');
+
+    // Open the popup and overlay when the button is clicked
+    popupButton.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+    });
+
+    // Close the popup and overlay when the close button is clicked
+    closeButton.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
+    });
+</script>
+<!-- uptp here for eca popup  -->
+
+
+
+  
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
